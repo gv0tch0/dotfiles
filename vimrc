@@ -6,6 +6,8 @@ filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
 filetype plugin on            " Enable filetype-specific plugins
 
+set backspace=2               " Backspace works across lines now
+
 set expandtab                 " Me no like hardtabs (only in Makefiles)
 set tabstop=4                 " Me like 4-space indentation
 set shiftwidth=4              " ~
