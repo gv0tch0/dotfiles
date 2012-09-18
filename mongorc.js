@@ -20,6 +20,10 @@ function stateName(stateCode) {
     }
 }
 prompt = function () {
+    if (typeof db === 'undefined') {
+        return "[nodb]> "
+    }
+
     var rsStatus = rs.status();
     var promptStatus = "";
     if (!rsStatus.ok) {
@@ -37,5 +41,7 @@ prompt = function () {
 }
 
 // Slaves are OK for reading.
-db.getMongo().slaveOk = true
+if (typeof db !== 'undefined') {
+    db.getMongo().slaveOk = true
+}
 
